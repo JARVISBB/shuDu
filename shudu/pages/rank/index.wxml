@@ -1,0 +1,55 @@
+<!--pages/rank/index.wxml-->
+<!--pages/record/index.wxml-->
+<view class='container' wx:if="{{countsAll}}">
+  <view class='hdBar'>
+    <text class='title'>好友排行</text>
+    <image src='/images/tip.png' bindtap='showTip' data-type="tip1"></image>
+    <text class='tip' wx:if="{{showTip1}}">显示您在好友中的排名情况</text>
+  </view>
+ 
+  <view class='all'>
+
+  </view>
+
+  <!-- 下拉菜单 -->
+   <view class='weui-cell '>
+      <!--下拉框  -->
+      <view class="weui-cell__bd dropdown" bindtap='bindShowMsg'>
+        <span class="dropbtn">{{nowText}}</span>
+        <span class="jiantoudown"></span>
+        <!-- 下拉需要显示的列表 -->
+        <view class="dropdown-content" wx:if="{{select}}">
+          <block wx:for="{{degrees}}" wx:key="this">
+            <view class="dropdown-item" bindtap="mySelect" data-name="{{item}}">{{item}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+
+
+  <view class='statistic'></view>
+  <view class='records records1'>
+    <view class='thead'>
+      <text>昵称</text>
+      <text>总局数</text>
+      <text>最短用时</text>
+    </view>
+    <block wx:for="{{f_records}}" wx:if="{{item.counts}}" wx:key="time">
+      <view class='tbody' bindtap='drawItem' data-idx="{{index}}" hover-class="view-hover">
+        <text>{{item.name}}</text>
+        <text>{{item.counts}}</text>
+        <text>{{item.time}}</text>
+      </view>
+    </block>
+    <block wx:for="{{records}}" wx:if="{{item.counts && item.degree==nowText}}" wx:key="showTime">
+      <view class='tbody total'>
+        <text>我的成绩</text>
+        <text>{{item.counts}}</text>
+        <text>{{item.showTime}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+<view wx:else class='empty'>
+  <text>{{loadingTip}}</text>
+</view>

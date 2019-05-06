@@ -1,0 +1,30 @@
+<!--pages/about/index.wxml-->
+<view class='container'>
+  <view class='hdBar tip' wx:if="{{tip && tip.title}}">
+    <text class='title'>{{tip.title}}</text>
+  </view>
+  <view class='bdContent tip' wx:if="{{tip && tip.content}}">
+    {{tip.content}}
+  </view>
+  <view class='hdBar'>
+    <text class='title'>玩法介绍？</text>
+  </view>
+  <view style="width:{{windowWidth}}px; height:{{windowWidth * 1.7}}px; margin: 5px auto 10px;">
+    <image src='/images/demo.jpg' bindtap='prevImg'></image>
+  </view>
+
+  <view class='hdBar'>
+    <text class='title'>隐私保护</text>
+  </view>
+  <view class='bdContent'>
+    本程序未经您本人允许的情况下不会私自获取您任何信息。
+  </view>
+  <view class='hdBar'>
+    <text class='title'>建议与反馈</text>
+  </view>
+  <view class='bdContent'>
+    <view>Email:
+      <text class='link' bindtap='copy' data-type="email">？？？？？</text>
+    </view>
+  </view>
+</view>

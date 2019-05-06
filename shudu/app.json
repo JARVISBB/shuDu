@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/record/index",
+    "pages/setting/index",
+    "pages/rank/index",
+    "pages/about/index",
+    "pages/components/loading/loading"
+  ],
+  "window": {
+    "navigationBarTitleText": "数独冒险",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ffc107",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#fff"
+  },
+  "sitemapLocation": "sitemap.json"
+}
